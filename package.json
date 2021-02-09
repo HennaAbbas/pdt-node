@@ -6,10 +6,10 @@
     "license": "Apache-2.0",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/syngenta-digital/pdt-node.git"
+        "url": "https://github.com/HennaAbbas/pdt-node"
     },
     "bugs": {
-        "url": "https://github.com/syngenta-digital/pdt-node/issues"
+        "url": "https://github.com/HennaAbbas/pdt-node/issues"
     },
     "bin": {
         "pdt": "bin/pdt"
