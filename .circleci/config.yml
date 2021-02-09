@@ -45,6 +45,7 @@ commands:
             - run: npm version $CIRCLE_TAG --allow-same-version --no-git-tag-version
             - run: echo "//registry.npmjs.com/:_authToken=$NPM_TOKEN" > .npmrc
             - run: cat .npmrc
+            - run: pwd
             - run: npm publish --access public
     slack-status:
         steps:
@@ -83,23 +84,23 @@ workflows:
         jobs:
             - install-build-deploy:
                 context:
-                    - tools-cicd
-                    - sonarcloud-token
+                    # - tools-cicd
+                    # - sonarcloud-token
                     - npm-org-token
                 filters:
                     tags:
                         only: /.*/
                     branches:
                         ignore: /.*/
-    install-build-test:
-        jobs:
-            - install-build-test:
-                context:
-                    - tools-cicd
-                    - sonarcloud-token
-                    - npm-org-token
-                filters:
-                    tags:
-                        ignore: /.*/
-                    branches:
-                        ignore: /dependabot.*/
+    # install-build-test:
+    #     jobs:
+    #         - install-build-test:
+    #             context:
+    #                 - tools-cicd
+    #                 - sonarcloud-token
+    #                 - npm-org-token
+    #             filters:
+    #                 tags:
+    #                     ignore: /.*/
+    #                 branches:
+    #                     ignore: /dependabot.*/
