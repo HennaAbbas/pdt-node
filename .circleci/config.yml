@@ -87,11 +87,11 @@ workflows:
                     # - tools-cicd
                     # - sonarcloud-token
                     - npm-org-token
-                filters:
-                    tags:
-                        only: /.*/
-                    branches:
-                        ignore: /.*/
+                # filters:
+                #     tags:
+                #         only: /.*/
+                #     branches:
+                #         ignore: /.*/
     # install-build-test:
     #     jobs:
     #         - install-build-test:
